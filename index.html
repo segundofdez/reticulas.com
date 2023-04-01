@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retículas</title>
+    <style>
+        :root {
+            --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            --bg-color: #fff;
+            --fg-color: #17171b;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #17171b;
+                --fg-color: #fff;
+            }
+        }
+        html {
+            font-family: var(--system-ui);
+            background-color: var(--bg-color);
+            color: var(--fg-color);
+        }
+        body {
+            padding: 1rem;
+            word-wrap: break-word;
+            display: flex;
+            column-gap: 1rem;
+        }
+        h1 {
+            font-size: clamp(1.5rem, 15vw, 100vw);
+            line-height: 85%;
+            max-width: 50vw;
+            text-transform: uppercase;
+            margin: 0;
+        }
+        p {
+            font-size: clamp(1.5rem, 5vw, 6rem);
+            line-height: 128%;
+            margin: 0;
+        }
+        a {
+            color: inherit;
+            text-decoration-thickness: 2px
+        }
+        a:hover {
+            text-decoration-style: wavy;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reticulas.com</h1>
+    <p><a target="_blank" href="https://www.flickr.com/photos/vidagrafica/albums/72157628393077239">Actualmente estamos poniendo orden y dándole forma a esta web…</a></p>
+</body>
+</html>
