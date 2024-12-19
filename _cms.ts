@@ -103,22 +103,22 @@ cms.collection(
         field.options = data.site?.search.values("tags");
       },
     },
-    {
-      name: "comments",
-      type: "object",
-      fields: [
-        {
-          name: "src",
-          label: "Link to Mastodon post",
-          type: "url",
-        },
-        {
-          name: "bluesky",
-          label: "Link to Bluesky post",
-          type: "url",
-        },
-      ],
-    },
+    // {
+    //   name: "comments",
+    //   type: "object",
+    //   fields: [
+    //     {
+    //       name: "src",
+    //       label: "Link to Mastodon post",
+    //       type: "url",
+    //     },
+    //     {
+    //       name: "bluesky",
+    //       label: "Link to Bluesky post",
+    //       type: "url",
+    //     },
+    //   ],
+    // },
     {
       name: "extra_head",
       type: "code",
