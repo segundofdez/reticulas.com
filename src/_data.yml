@@ -1,0 +1,11 @@
+lang: es
+home:
+  welcome: Retículas
+menu_links: []
+metas:
+  site: Retículas
+  description: Retículas en diseño
+  title: =title
+  image: =image
+  lang: es
+  generator: true
