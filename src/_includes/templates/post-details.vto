@@ -25,4 +25,16 @@
       {{ /if }}
     {{ /for }}
   </div>
+
+  <div class="post-categories">
+    <ul>
+      {{ for category of search.values("categories") }}
+      <li>
+      {{ if page }}
+        <a data-pagefind-filter="filter" class="badge" href="{{ page.url }}">{{ category }}</a>
+        {{ /if }}
+      </li>
+      {{ /for }}
+    </ul>
+  </div>
 </div>

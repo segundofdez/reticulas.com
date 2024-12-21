@@ -23,6 +23,7 @@ title: Home
       {{ include "templates/post-details.vto" {
         date: post.date,
         tags: post.tags,
+        category: post.categories,
         author: post.author,
         readingInfo: post.readingInfo
         } }}
@@ -38,7 +39,3 @@ title: Home
   </article>
 {{ /for }}
 </section>
-
-<hr>
-
-<p>{{ i18n.nav.archive }}</p>

@@ -22,4 +22,15 @@ export default function* ({ search, i18n }) {
       author,
     };
   }
+
+   // Generate a page for each category
+   for (const category of search.values("categories")) {
+    yield {
+      url: `/category/${category}/`,
+      title: `${i18n.search.by_category} ${category}`,
+      type: "category",
+      search_query: `type=post category='${category}'`,
+      category,
+    };
+  }
 }

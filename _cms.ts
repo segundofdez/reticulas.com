@@ -102,6 +102,13 @@ cms.collection(
       init(field, { data }) {
         field.options = data.site?.search.values("tags");
       },
+    },{
+      name: "categories",
+      type: "list",
+      label: "Categorías",
+      init(field, { data }) {
+        field.options = data.site?.search.values("categorias");
+      },
     },
     // {
     //   name: "comments",
