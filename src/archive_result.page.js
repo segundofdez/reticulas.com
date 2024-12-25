@@ -29,7 +29,7 @@ export default function* ({ search, i18n }) {
       url: `/category/${category}/`,
       title: `${i18n.search.by_category} ${category}`,
       type: "category",
-      search_query: `type=post category='${category}'`,
+      search_query: `type=post '${category}'`,
       category,
     };
   }
