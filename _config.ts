@@ -18,8 +18,8 @@ site
     .copy("img")
     .copy("fonts")
     .copy("rrss.jpg")
-    .add("css/main.css")
-    .add("js/main.js")
+    .add("/main.css")
+    .add("/main.js")
     .use(transformImages({
         cache: true,
         extensions: [".jpg", ".jpeg", ".png", ".gif", ".svg", ".webp"],

@@ -24,31 +24,16 @@
     />
     <meta property="og:image" content="https://www.reticulas.com/rrss.jpg">
     <meta property="og:site_name" content="reticulas.com" />
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/main.css">
 </head>
 <body>
     <header>
-        <h1>
-            Reticulas.com
-        </h1>
-        <nav>
-            <ul>
-            {{ for alt of alternates }}
-                <li>
-                    <a href="{{ alt.url }}" {{ if alt.lang == lang }}aria-current="page"{{ /if }}>
-                    {{ alt.lang }}
-                    </a>
-                </li>
-            {{ /for }}
-            </ul>
-        </nav>
+        {{ include "templates/navbar.vto" }}
     </header>
     <main>
         {{ content }}
     </main>
-    <footer>
-        <p>&copy; {{ new Date().getFullYear() }} Reticulas.com</p>
-    </footer>
-    <script type="module" src="/js/main.js"></script>
+    {{ include "templates/footer.vto" }}
+    <script type="module" src="/main.js"></script>
 </body>
 </html>

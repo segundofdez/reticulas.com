@@ -1,0 +1,26 @@
+<a href="/" class="logo" aria-label="Reticulas.com">
+    Reticulas.com
+</a>
+
+{{#
+  TODO:
+- engadir o lang ao logo para que ao actualizar vaia a páxina no idioma correcto
+- engadir proxecto ao menu para que se traduza. Probando _data/common/nav.yml??
+
+ #}}
+<nav>
+    <ul>
+        <li>
+            <a href="/proyecto/">Proyecto</a>
+        </li>
+    </ul>
+    <ul>
+    {{ for alt of alternates }}
+        <li>
+            <a href="{{ alt.url }}" {{ if alt.lang == lang }}aria-current="page"{{ /if }}>
+            {{ alt.lang }}
+            </a>
+        </li>
+    {{ /for }}
+    </ul>
+</nav>
