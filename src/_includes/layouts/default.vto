@@ -1,21 +1,54 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="{{lang}}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="/main.css">
+    <meta
+        name="description"
+        content="{{ description }}"
+    />
+     <meta
+        name="keywords"
+        content="{{ keywords }}"
+    />
+    <meta name="application-name" content="Retículas" />
+    <meta
+        property="og:title"
+        content="{{title}}"
+    />
+    <meta property="og:url" content="https://www.reticulas.com" />
+    <meta
+        property="og:description"
+        content="{{ description }}"
+    />
+    <meta property="og:image" content="https://www.reticulas.com/rrss.jpg">
+    <meta property="og:site_name" content="reticulas.com" />
+    <link rel="stylesheet" href="/css/main.css">
 </head>
-<body class="ly-default">
+<body>
     <header>
-        <h1 class="title logo">reticulas.com</h1>
+        <h1>
+            Reticulas.com
+        </h1>
+        <nav>
+            <ul>
+            {{ for alt of alternates }}
+                <li>
+                    <a href="{{ alt.url }}" {{ if alt.lang == lang }}aria-current="page"{{ /if }}>
+                    {{ alt.lang }}
+                    </a>
+                </li>
+            {{ /for }}
+            </ul>
+        </nav>
     </header>
     <main>
         {{ content }}
     </main>
     <footer>
-
+        <p>&copy; {{ new Date().getFullYear() }} Reticulas.com</p>
     </footer>
-
+    <script type="module" src="/js/main.js"></script>
 </body>
 </html>

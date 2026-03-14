@@ -1,0 +1,10 @@
+:root {
+    --color-bg: hsl(0, 0%, 95%);
+    --color-fg: hsl(0, 0%, 10%);
+    --color-accent: hsl(0, 100%, 50%);
+
+    --fw-regular: 400;
+    --fw-bold: 700;
+
+    --fs-body: 1rem;
+}
