@@ -1,15 +1,9 @@
 {{ set homePage = search.page("id=home lang=" + lang) }}
-<a href="{{ homePage.url }}" class="logo" aria-label="Reticulas.com">
-    Reticulas.com
+<a class="logo" href="{{ homePage.url }}" class="logo" aria-label="Reticulas.com">
+    <span>Reti</span><span>culas.</span><span>com</span>
 </a>
 
 <nav>
-    {{ set projectPage = search.page("id=project lang=" + lang) }}
-    <ul>
-        <li>
-            <a href="{{ projectPage.url }}">{{ nav[lang].menu_project }}</a>
-        </li>
-    </ul>
     <ul>
     {{ for alt of alternates }}
         <li>

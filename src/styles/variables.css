@@ -14,6 +14,6 @@
 [data-theme="dark"] {
     --color-bg: hsl(0, 0%, 15%);
     --color-fg: hsl(0, 0%, 95%);
-    --color-accent: hsl(160, 70%, 52%);  
+    --color-accent: hsl(160, 70%, 52%);
     color-scheme: dark;
 }

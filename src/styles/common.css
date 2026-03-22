@@ -13,9 +13,11 @@ html {
 }
 body {
     margin: 0;
-    padding: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
+    padding: 1rem;
+    font-family: "Satoshi", sans-serif;
+    font-size: 1.125rem;
+        font-weight: 450;
+    }
 
 a {
     color: var(--color-accent);
@@ -23,6 +25,38 @@ a {
 }
 li:has(a[aria-current="page"]) {
     display: none;
+}
+
+/* todo: move this */
+.logo {
+    font-weight: 800;
+    font-size: clamp(1.5rem, calc(15vw + .25rem), 3rem);
+    letter-spacing: calc(-0.01% - 0.1vw);
+    line-height: 78%;
+    color: var(--color-fg);
+    display: inline-flex;
+    flex-direction: column;
+    span {
+        /* &:first-child {
+        }
+        &:nth-child(2) {
+        } */
+        &:last-child {
+            line-height: 70%;
+            margin-bottom: calc(2%);
+            align-self: flex-end;
+        }
+    }
+    /* &:hover {
+        span {
+            &:first-child {
+            }
+            &:nth-child(2) {
+            }
+            &:last-child {
+            }
+        }
+    } */
 }
 
 [data-theme-toggle] {
