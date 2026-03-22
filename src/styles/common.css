@@ -24,3 +24,14 @@ a {
 li:has(a[aria-current="page"]) {
     display: none;
 }
+
+[data-theme-toggle] {
+    background: none;
+    border: 1px solid currentColor;
+    color: inherit;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    line-height: 1;
+}

@@ -1,17 +1,13 @@
-<a href="/" class="logo" aria-label="Reticulas.com">
+{{ set homePage = search.page("id=home lang=" + lang) }}
+<a href="{{ homePage.url }}" class="logo" aria-label="Reticulas.com">
     Reticulas.com
 </a>
 
-{{#
-  TODO:
-- engadir o lang ao logo para que ao actualizar vaia a páxina no idioma correcto
-- engadir proxecto ao menu para que se traduza. Probando _data/common/nav.yml??
-
- #}}
 <nav>
+    {{ set projectPage = search.page("id=project lang=" + lang) }}
     <ul>
         <li>
-            <a href="/proyecto/">Proyecto</a>
+            <a href="{{ projectPage.url }}">{{ nav[lang].menu_project }}</a>
         </li>
     </ul>
     <ul>
@@ -23,4 +19,5 @@
         </li>
     {{ /for }}
     </ul>
+    <button data-theme-toggle aria-label="Cambiar tema"><span>Cambiar tema</span></button>
 </nav>

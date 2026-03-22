@@ -17,6 +17,7 @@ const site = lume({
 site
     .copy("img")
     .copy("fonts")
+    .copy("scripts")
     .copy("rrss.jpg")
     .add("/main.css")
     .add("/main.js")
