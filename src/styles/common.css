@@ -16,7 +16,7 @@ body {
     padding: 1rem;
     font-family: "Satoshi", sans-serif;
     font-size: 1.125rem;
-        font-weight: 450;
+        font-weight: 500;
     }
 
 a {
@@ -29,7 +29,7 @@ li:has(a[aria-current="page"]) {
 
 /* todo: move this */
 .logo {
-    font-weight: 800;
+    font-weight: 860;
     font-size: clamp(1.5rem, calc(15vw + .25rem), 3rem);
     letter-spacing: calc(-0.01% - 0.1vw);
     line-height: 78%;

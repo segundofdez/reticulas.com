@@ -1,7 +1,7 @@
 {
   "imports": {
-    "lume/": "https://cdn.jsdelivr.net/gh/lumeland/lume@3.2.2/",
-    "lume/jsx-runtime": "https://cdn.jsdelivr.net/gh/oscarotero/ssx@0.1.14/jsx-runtime.ts"
+    "lume/": "https://cdn.jsdelivr.net/gh/lumeland/lume@3.3.1/",
+    "lume/jsx-runtime": "https://cdn.jsdelivr.net/gh/oscarotero/ssx@0.1.15/jsx-runtime.ts"
   },
   "permissions": {
     "lume": {
@@ -42,6 +42,10 @@
     "serve": {
       "description": "Run and serve the site for development",
       "command": "deno task lume -s"
+    },
+    "new": {
+      "description": "Create new content or code using artifacts",
+      "command": "deno task lume new"
     }
   },
   "compilerOptions": {
@@ -57,7 +61,7 @@
   ],
   "lint": {
     "plugins": [
-      "https://cdn.jsdelivr.net/gh/lumeland/lume@3.2.2/lint.ts"
+      "https://cdn.jsdelivr.net/gh/lumeland/lume@3.3.1/lint.ts"
     ],
     "rules": {
       "exclude": [
@@ -65,5 +69,11 @@
       ]
     }
   },
-  "lock": false
+  "lock": false,
+  "allowScripts": {
+    "deny": [
+      "npm:sharp",
+      "npm:@parcel/watcher"
+    ]
+  }
 }
