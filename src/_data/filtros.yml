@@ -1,0 +1,18 @@
+es:
+  - id: modular
+    label: Modular
+  - id: columna
+    label: Columna
+  - id: jerarquica
+    label: Jerárquica
+  - id: manuscrito
+    label: Manuscrito
+gl:
+  - id: modular
+    label: Modular
+  - id: columna
+    label: Columna
+  - id: jerarquica
+    label: Xerárquica
+  - id: manuscrito
+    label: Manuscrito

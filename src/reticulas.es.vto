@@ -1,0 +1,78 @@
+---
+lang: es
+id: grids
+url: /reticulas/
+layout: layouts/default.vto
+title: Retículas - Catálogo
+description: "Catálogo de retículas tipográficas y de diseño gráfico: modular, columna, jerárquica y más."
+keywords: retículas, catálogo, modular, columna, tipografía, diseño gráfico
+---
+
+<h1>Retículas</h1>
+
+{{ set entries = search.pages("section=reticulas lang=es", "title=asc") }}
+
+<div class="filters" role="group" aria-label="Filtrar por tipo">
+    {{ for filtro of filtros[lang] }}
+    {{ if entries.some(e => [].concat(e.tipo || []).includes(filtro.id)) }}
+    <label class="filter-label">
+        <input type="checkbox" class="filter-check" value="{{ filtro.id }}">
+        {{ filtro.label }}
+    </label>
+    {{ /if }}
+    {{ /for }}
+</div>
+
+<ul class="reticulas-list" id="reticulas-list">
+{{ for reticula of entries }}
+<li class="reticula-item" data-tipo="{{ [].concat(reticula.tipo || []).join(' ') }}">
+    <a href="{{ reticula.url }}">
+        {{ if reticula.imagen }}
+        <img src="{{ reticula.imagen }}" alt="{{ reticula.title }}" loading="lazy">
+        {{ /if }}
+        <div class="reticula-info">
+            <h2>{{ reticula.title }}</h2>
+            {{ if reticula.autor }}
+            <p class="reticula-meta-inline">
+                {{ reticula.autor }}{{ if reticula.year }}, {{ reticula.year }}{{ /if }}
+            </p>
+            {{ /if }}
+            {{ if reticula.tipo }}
+            <span class="tag tag--tipo">{{ reticula.tipo }}</span>
+            {{ /if }}
+        </div>
+    </a>
+</li>
+{{ /for }}
+</ul>
+
+<script>
+function applyFilters(selected) {
+    document.querySelectorAll('.reticula-item').forEach(item => {
+        const tipos = (item.dataset.tipo || '').split(' ').filter(Boolean);
+        item.hidden = !tipos.length || (selected.length > 0 && !selected.some(s => tipos.includes(s)));
+    });
+    const url = new URL(window.location);
+    url.searchParams.delete('tipo');
+    selected.forEach(v => url.searchParams.append('tipo', v));
+    history.replaceState(null, '', url);
+}
+
+const checks = document.querySelectorAll('.filter-check');
+
+// Al cargar: leer URL y marcar checkboxes
+const initialTypes = new URLSearchParams(window.location.search).getAll('tipo');
+initialTypes.forEach(v => {
+    const cb = document.querySelector(`.filter-check[value="${v}"]`);
+    if (cb) cb.checked = true;
+});
+applyFilters(initialTypes);
+
+// Al cambiar un checkbox
+checks.forEach(cb => {
+    cb.addEventListener('change', () => {
+        const selected = [...checks].filter(c => c.checked).map(c => c.value);
+        applyFilters(selected);
+    });
+});
+</script>

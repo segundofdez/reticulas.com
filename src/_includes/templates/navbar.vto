@@ -4,6 +4,17 @@
 </a>
 
 <nav>
+
+    {{ set projectPage = search.page("id=project lang=" + lang) }}
+    {{ set gridsPage = search.page("id=grids lang=" + lang) }}
+    <ul>
+        <li>
+            <a href="{{ gridsPage.url }}">{{ nav[lang].menu_grids }}</a>
+        </li>
+        <li>
+            <a href="{{ projectPage.url }}">{{ nav[lang].menu_project }}</a>
+        </li>
+    </ul>
     <ul>
     {{ for alt of alternates }}
         <li>

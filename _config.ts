@@ -21,6 +21,7 @@ site
     .copy("rrss.jpg")
     .add("/main.css")
     .add("/main.js")
+    .add("**/*.md")
     .use(transformImages({
         cache: true,
         extensions: [".jpg", ".jpeg", ".png", ".gif", ".svg", ".webp"],
@@ -36,7 +37,7 @@ site
     }))
     .use(multilanguage({
         languages: ["gl", "es"],
-        defaultLanguage: "es",
+        defaultLanguage: "gl",
     }));
 
 

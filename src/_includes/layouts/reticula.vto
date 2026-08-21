@@ -1,0 +1,46 @@
+---
+layout: layouts/default.vto
+---
+<article class="reticula">
+    <header class="reticula-header">
+        <h1>{{ title }}</h1>
+        <dl class="reticula-meta">
+            {{ if autor }}
+            <div>
+                <dt>Autor</dt>
+                <dd>{{ autor }}</dd>
+            </div>
+            {{ /if }}
+            {{ if year }}
+            <div>
+                <dt>Año</dt>
+                <dd>{{ year }}</dd>
+            </div>
+            {{ /if }}
+            {{ if tipo }}
+            <div>
+                <dt>Tipo</dt>
+                <dd>{{ for t of [].concat(tipo) }}<span class="tag tag--tipo">{{ t }}</span>{{ /for }}</dd>
+            </div>
+            {{ /if }}
+            {{ if etiquetas && etiquetas.length }}
+            <div>
+                <dt>Tags</dt>
+                <dd>
+                    {{ for tag of etiquetas }}
+                    <span class="tag">{{ tag }}</span>
+                    {{ /for }}
+                </dd>
+            </div>
+            {{ /if }}
+        </dl>
+    </header>
+    {{ if imagen }}
+    <figure class="reticula-figura">
+        <img src="{{ imagen }}" alt="{{ title }}">
+    </figure>
+    {{ /if }}
+    <div class="reticula-content">
+        {{ content }}
+    </div>
+</article>
